@@ -103,7 +103,7 @@ The final model was used to predict profit on new/unseen order data.
 
 ## 🚀 How to Run the Project
 1. Clone the repository  
-   git clone https://github.com/your-username/profit-prediction-ml.git
+   git clone https://github.com/TheAImentor/Retail-sales-Analysis.git
    
 2. Install dependencies
     pip install -r requirements.txt
