@@ -98,16 +98,6 @@ The final model was used to predict profit on new/unseen order data.
 - Scikit-learn
 - XGBoost
 
----
-
-## 📁 Project Structure
-├── data/
-│ └── dataset.csv
-├── notebooks/
-│ └── Profit_Prediction_EDA_Model.ipynb
-├── README.md
-└── requirements.txt
-
 
 ---
 
