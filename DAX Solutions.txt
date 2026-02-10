@@ -1,0 +1,56 @@
+ 1. Total Quantity (Measure)
+Total Quantity = 
+SUM('orders'[Quantity])
+
+ 2. Total List Value (Measure)
+Total List Value =
+SUMX(
+    'orders',
+    'orders'[List Price] * 'orders'[Quantity]
+)
+
+3.  Discount Amount (Calculated Column)
+Discount Amount =
+'orders'[List Price] * 'orders'[Quantity] * 'orders'[Discount Percent] / 100
+
+
+4.  Net Sales (Measure)
+Net Sales =
+SUMX(
+    'orders',
+    ('orders'[List Price] * 'orders'[Quantity])
+    - ('orders'[List Price] * 'orders'[Quantity] * 'orders'[Discount Percent] / 100)
+)
+
+5. Total Cost (Measure)
+Total Cost =
+SUMX(
+    'orders',
+    'orders'[Cost Price] * 'orders'[Quantity]
+)
+
+6.  Profit (Measure)
+Profit = 
+[Net Sales] - [Total Cost]
+
+
+7.  Profit Margin % (Measure)
+Profit Margin % =
+DIVIDE([Profit], [Net Sales], 0)
+
+
+8. Average Order Value (Measure)
+Average Order Value =
+DIVIDE(
+    [Net Sales],
+    DISTINCTCOUNT('orders'[Order Id]),
+    0
+)
+
+9. Total Orders (Measure)
+Total Orders =
+DISTINCTCOUNT('orders'[Order Id])
+
+10. Sales by Year (Measure)
+Sales by Year = 
+[Net Sales]
